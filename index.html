@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ziyad & Nouran Wedding</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: cursive;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      overflow-x: hidden;
+    }
+
+    /* ── PAGE TOGGLE ── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ══════════════════════════════
+       MAIN PAGE
+    ══════════════════════════════ */
+    .hero {
+      background-image: url('photos/WhatsApp Image 2026-04-05 at 2.21.58 PM (1).jpeg');
+      background-size: cover;
+      background-position: center;
+      min-height: 60vw;
+      max-height: 520px;
+      color: black;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .hero2 {
+      background-image: url('photos/WhatsApp Image 2026-04-05 at 3.01.05 PM.jpeg');
+      background-size: cover;
+      background-position: center;
+      min-height: 60vw;
+      max-height: 520px;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .hero h1, .hero2 h1 {
+      margin: 0 0 10px;
+      font-size: clamp(26px, 8vw, 50px);
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero p, .hero2 p {
+      margin: 5px 0;
+      font-size: clamp(13px, 4vw, 18px);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .section {
+      background-color: rgb(192, 178, 178);
+      padding: 40px 16px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .section h1 { font-size: clamp(18px, 5vw, 32px); margin-bottom: 10px; }
+    .section h2 { font-size: clamp(16px, 5vw, 28px); margin-bottom: 10px; }
+
+    /* ── PROTECTED IMAGES ── */
+    .img-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 680px;
+      margin: 20px auto;
+      display: block;
+      pointer-events: none;
+    }
+
+    .img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      z-index: 2;
+    }
+
+    .img-wrap img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+      pointer-events: none;
+      -webkit-user-drag: none;
+      user-drag: none;
+    }
+
+    .img-wrap img.movable {
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .zoomed {
+      transform: scale(1.08);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .section p {
+      max-width: 600px;
+      margin: 12px auto;
+      font-size: clamp(13px, 3.5vw, 16px);
+      line-height: 1.7;
+      padding: 0 8px;
+    }
+
+    .btn, .btn2 {
+      display: inline-block;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: transform 0.3s ease;
+      font-size: clamp(13px, 3.5vw, 16px);
+      font-family: cursive;
+      cursor: pointer;
+      border: none;
+      min-width: 160px;
+      touch-action: manipulation;
+    }
+
+    .btn  { background: white; color: black; margin-top: 30px; }
+    .btn2 { background: black; color: white; margin-top: 15px; }
+    .btn:hover, .btn2:hover { transform: scale(1.05); }
+    .btn:active, .btn2:active { transform: scale(0.97); }
+
+    /* ══════════════════════════════
+       DETAILS PAGE
+    ══════════════════════════════ */
+    #details-page {
+      background-color: rgb(192, 178, 178);
+      min-height: 100vh;
+      color: #2c2020;
+    }
+
+    .banner {
+      background-color: #5a3e3e;
+      color: #f5eded;
+      text-align: center;
+      padding: 50px 20px 40px;
+    }
+
+    .banner h1 {
+      font-size: clamp(26px, 7vw, 48px);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .banner p {
+      font-size: clamp(13px, 3.5vw, 18px);
+      opacity: 0.85;
+    }
+
+    .divider {
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(to right, #c0b2b2, #a08080, #c0b2b2);
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 16px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #f5eded;
+      border-radius: 16px;
+      padding: 28px 20px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 4px 18px rgba(90,62,62,0.13);
+      text-align: center;
+    }
+
+    .card .icon { font-size: 38px; margin-bottom: 12px; }
+
+    .card h2 {
+      font-size: clamp(16px, 4.5vw, 22px);
+      color: #5a3e3e;
+      margin-bottom: 12px;
+      border-bottom: 2px solid rgb(192,178,178);
+      padding-bottom: 10px;
+    }
+
+    .card p {
+      font-size: clamp(13px, 3.5vw, 16px);
+      line-height: 1.8;
+      color: #4a3030;
+    }
+
+    .card .highlight {
+      font-size: clamp(18px, 5vw, 26px);
+      font-weight: bold;
+      color: #5a3e3e;
+      margin: 8px 0;
+    }
+
+    .map-wrapper {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto 50px;
+      padding: 0 16px;
+    }
+
+    .map-wrapper h2 {
+      text-align: center;
+      font-size: clamp(16px, 4.5vw, 24px);
+      color: #5a3e3e;
+      margin-bottom: 16px;
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 280px;
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px rgba(90,62,62,0.15);
+    }
+
+    .back-wrap {
+      text-align: center;
+      padding: 10px 20px 50px;
+    }
+
+    .btn-back {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #5a3e3e;
+      color: #f5eded;
+      border-radius: 50px;
+      font-family: cursive;
+      font-size: clamp(13px, 3.5vw, 16px);
+      transition: transform 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+      border: none;
+      touch-action: manipulation;
+      min-width: 180px;
+    }
+
+    .btn-back:hover { transform: scale(1.08); background: #3e2828; }
+    .btn-back:active { transform: scale(0.97); }
+
+    /* ══════════════════════════════
+       MOBILE SPECIFIC
+    ══════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero, .hero2 {
+        min-height: 55vw;
+        padding: 24px 14px;
+      }
+
+      .section { padding: 28px 12px; }
+
+      .img-wrap {
+        max-width: 100%;
+        margin: 14px auto;
+      }
+
+      .cards { padding: 28px 12px; gap: 16px; }
+      .card { padding: 22px 16px; }
+      .map-wrapper { padding: 0 12px; }
+      .map-wrapper iframe { height: 200px; }
+    }
+
+    @media (min-width: 768px) {
+      .cards { gap: 28px; }
+      .card { max-width: 360px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════ MAIN PAGE ══════════════ -->
+  <div id="main-page" class="page active">
+
+    <div class="hero">
+      <h1>Ziyad & Nouran</h1>
+      <p>Are getting married</p>
+      <p><b>May, 2026</b></p>
+    </div>
+
+    <div class="section">
+      <h2>Ziyad & Nouran</h2>
+      <div class="img-wrap">
+        <img src="photos/WhatsApp Image 2026-04-05 at 2.52.51 PM.jpeg" alt="Couple photo">
+      </div>
+      <p>
+        We promised to stay together for a lifetime, and we have kept that promise.
+        the eyes that see hope in the toughest of times.
+      </p>
+      <p>TODAY, we have reached this moment, stronger than ever, after overcoming everything together.</p>
+      <button class="btn" onclick="showPage('details')">Wedding Details</button>
+    </div>
+
+    <div class="hero2">
+      <h1>You Are Invited</h1>
+      <p>Of course..</p>
+    </div>
+
+    <div class="section">
+      <h2>THE WEDDING</h2>
+      <div class="img-wrap">
+        <img class="movable" src="photos/WhatsApp Image 2026-04-05 at 3.05.35 PM.jpeg" alt="Wedding photo">
+      </div>
+      <h1>Upload our wedding photos here!</h1>
+      <p>Kindly Respond By May, 2026</p>
+      <button class="btn2">Upload Photos</button>
+    </div>
+
+  </div>
+
+  <!-- ══════════════ DETAILS PAGE ══════════════ -->
+  <div id="details-page" class="page">
+
+    <div class="banner">
+      <h1>Ziyad & Nouran</h1>
+      <p>Wedding Details</p>
+    </div>
+    <div class="divider"></div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="icon">📅</div>
+        <h2>Date</h2>
+        <div class="highlight">15 May, 2026</div>
+        <p>Friday Evening</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🏛️</div>
+        <h2>Address</h2>
+        <div class="highlight">Safir halls</div>
+        <p>Alex Down Town</p>
+      </div>
+    </div>
+
+    <div class="map-wrapper">
+      <h2>📍 Location</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3414.1162121794837!2d29.8890419!3d31.162050199999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c3e337c1235b%3A0x40cf54191cda2719!2z2YLYp9i52KfYqiDYs9mB2YrYsQ!5e0!3m2!1sar!2seg!4v1775395044058!5m2!1sar!2seg"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <div class="back-wrap">
+      <button class="btn-back" onclick="showPage('main')">← Back to Invitation</button>
+    </div>
+
+  </div>
+
+  <script>
+    /* ── PAGE SWITCH ── */
+    function showPage(name) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(name + '-page').classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    /* ── ZOOM ON DESKTOP ONLY ── */
+    if (!('ontouchstart' in window)) {
+      document.querySelectorAll("img.movable").forEach(img => {
+        img.addEventListener("mouseover", () => img.classList.add("zoomed"));
+        img.addEventListener("mouseout",  () => img.classList.remove("zoomed"));
+      });
+    }
+
+    /* ══════════════════════════════
+       SECURITY LAYER
+    ══════════════════════════════ */
+
+    /* 1 — Disable right-click */
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    /* 2 — Disable image drag */
+    document.addEventListener('dragstart', e => e.preventDefault());
+
+    /* 3 — Block keyboard shortcuts (F12, Ctrl+S, Ctrl+U, Ctrl+Shift+I/J/C, etc.) */
+    document.addEventListener('keydown', function(e) {
+      const blocked =
+        e.key === 'F12' ||
+        (e.ctrlKey && ['s','u','p','a'].includes(e.key.toLowerCase())) ||
+        (e.ctrlKey && e.shiftKey && ['i','j','c','k'].includes(e.key.toLowerCase()));
+      if (blocked) e.preventDefault();
+    });
+
+    /* 4 — Detect DevTools open (size heuristic) */
+    (function devToolsGuard() {
+      const threshold = 200;
+      setInterval(() => {
+        if (
+          window.outerWidth - window.innerWidth > threshold ||
+          window.outerHeight - window.innerHeight > threshold
+        ) {
+          document.body.innerHTML =
+            '<div style="display:flex;height:100vh;align-items:center;justify-content:center;font-family:cursive;font-size:22px;background:#c0b2b2;color:#5a3e3e;text-align:center;padding:20px">⚠️<br>This page is private.<br>Please close developer tools.</div>';
+        }
+      }, 1000);
+    })();
+
+    /* 5 — Disable long-press save on mobile (touch) */
+    document.addEventListener('touchstart', function(e) {
+      if (e.target.tagName === 'IMG') e.preventDefault();
+    }, { passive: false });
+
+    /* 6 — Blur page when tab loses focus (minor deterrent) */
+    document.addEventListener('visibilitychange', () => {
+      document.body.style.filter = document.hidden ? 'blur(8px)' : '';
+    });
+  </script>
+
+</body>
+</html>
