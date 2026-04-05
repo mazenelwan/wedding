@@ -385,7 +385,7 @@
       </div>
       <h1>Upload our wedding photos!</h1>
       <p>Kindly Respond By May, 2026</p>
-      <a class="btn2" href="https://drive.google.com/drive/folders/1fHg9Nz-KS9mvaXnyi4K0iNz-k3P0APV_?usp=drive_link" target="_blank">Upload Photos</a>
+     <a class="btn2" href="https://drive.google.com/drive/folders/1fHg9Nz-KS9mvaXnyi4K0iNz-k3P0APV_?usp=drive_link" target="_blank">Upload Photos</a>
     </div>
 
   </div>
@@ -454,17 +454,7 @@
       if (blocked) e.preventDefault();
     });
 
-    (function devToolsGuard() {
-      const threshold = 200;
-      setInterval(() => {
-        if (
-          window.outerWidth - window.innerWidth > threshold ||
-          window.outerHeight - window.innerHeight > threshold
-        ) {
-          document.body.innerHTML = '<div style="display:flex;height:100vh;align-items:center;justify-content:center;font-family:serif;font-size:22px;background:#ede5e5;color:#5a3e3e;text-align:center;padding:20px">This page is private.</div>';
-        }
-      }, 1000);
-    })();
+
 
     document.addEventListener('touchstart', function(e) {
       if (e.target.tagName === 'IMG') e.preventDefault();
